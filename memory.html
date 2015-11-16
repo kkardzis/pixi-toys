@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PIXI Toys: Memory</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <style>
+    #menuarea { background-color: teal; }
+    #gamearea { background-color: blue; }
+    #viewport {
+      background-color: black;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+    .flex-view {
+      justify-content: center;
+      align-items: stretch;
+      flex-flow: column;
+      display: flex;
+    }
+    .flex-area {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+    canvas {
+      display: block;
+    }
+    .btn:active:focus {
+      outline: none;
+    }
+  </style>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-53767359-2', 'auto');
+</script>
+</head>
+
+<body id="viewport">
+  <div class="flex-view">
+    <div class="flex-area" id="gamearea"></div>
+    <div class="flex-area" id="menuarea">
+      <div class="btn-toolbar">
+        <div class="btn-group btn-group-lg">
+          <button type="button" class="btn btn-danger" onclick="this.blur(); game.start();">MEMORY</button>
+          <button type="button" class="btn btn-danger" onclick="this.blur(); toggleFullScreen();"><i class="glyphicon glyphicon-fullscreen"></i></button>
+        </div>
+        <div class="btn-group btn-group-lg">
+          <button type="button" class="btn btn-success" onclick="this.blur(); game.start(3,2);">3x2</button>
+          <button type="button" class="btn btn-success" onclick="this.blur(); game.start(4,3);">4x3</button>
+          <button type="button" class="btn btn-success" onclick="this.blur(); game.start(6,4);">6x4</button>
+          <button type="button" class="btn btn-success" onclick="this.blur(); game.start(8,6);">8x6</button>
+          <button type="button" class="btn btn-success" onclick="this.blur(); game.start(12,8);">12x8</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="pixi.js"></script>
+  <script src="memory.js"></script>
+  <img src="https://ga-beacon.appspot.com/UA-53767359-1/pixi-toys/memory?pixel" />
+</body>
+</html>
